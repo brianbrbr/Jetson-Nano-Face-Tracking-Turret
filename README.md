@@ -1,6 +1,9 @@
 # Jetson-Nano-Face-Tracking-Turret
 Face and eye tracking turret using Jetson Nano, CSI camera, and pan-tilt mechanism. Tracks faces, detects eyes, and lights up LEDs for demo shooting.
 
+Demo : Video https://youtu.be/sykdySLcNLY
+
+
 ## 🛠️ Motivation
 I saw a video on IG and couldn't stop wondering:
 1. How does it work?
@@ -90,7 +93,7 @@ With a bit of tinkering, you too can build your own smart turret to track whatev
 ---
 
 ## 📝 Circuit Diagram
-
+![Jetson-Nano-Face-Tracking-Turret-circuit](https://github.com/user-attachments/assets/60d7dce7-097a-4a1d-a8c0-687173ec7cd7)
 
 ---
 
@@ -102,4 +105,29 @@ MIT License. Steal like an artist, but give credit where it's due. 😉
 ## 🙌 How to Run
 1. Clone this repo:  
    ```bash
-   git clone https://github.com/YourUsername/jetson-nano-eye-turret.git
+   git clone https://github.com/brianbrbr/jetson-nano-eye-turret.git
+
+
+---
+
+## 🤔 Questions You Might Have
+1. What if my CSI camera isn't working?
+Double-check the connection to the Jetson Nano.
+Run v4l2-ctl --list-devices to confirm the camera is detected.
+
+2. Why is my servo not moving?
+Verify the GPIO pins are connected correctly.
+Check the power supply to the servo motor.
+
+3. Why is eye detection not accurate?
+Lighting conditions matter. Test in a well-lit environment.
+Adjust the hyperparameters (50 for speed tuning).
+
+4. Can I use a USB camera instead of a CSI camera?
+Yes, modify the camera setup code to support a USB camera.
+
+5. What if I want to track objects other than faces?
+Replace the face and eye classifiers with another object detection model from OpenCV.
+
+6.Can I modify the LED to trigger something else?
+Sure! Replace the LED logic with any GPIO-controlled action, such as activating a buzzer or a small water gun.
