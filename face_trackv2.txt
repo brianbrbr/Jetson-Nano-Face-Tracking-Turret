@@ -1,0 +1,36 @@
+Motivation:
+I saw this video on IG and I'm wodering how it works.
+I'm wodering how the machine tracking the people and shoot.
+The author don't have open source.
+So I try to use the material I have to realize the same function.
+I saw the author using Husky lens and 3d print killjoy turret.
+I use jetson nano and CSI camera to replace Husky lens.
+I use pan tilt to do the same mechanism.
+I use the led lighting to demo shooting.
+And this is the circuit.
+The code explan:
+First of all I import the library I need for this project.
+Second I release GPIO resource and initial the servo and led.
+Third I set the threading operation to make jetson nano use resource more effiency.
+Forth I set up the CSI camera. And set the display is width is 320 and the height is 240.
+Fifth I import the face classfier and eye classfier, which I found at opencv github.To classify face and eye.
+Sixth I set up face tracking code and tunning PID.
+At first I set the color become gray, and draw the face rectangular.
+I use this code to find the middle of rectangular.
+If the rectangular is far from 15 pixels of last rectangular which will make the drive the servo to tracking.
+And 50 is hyperparameter it can tunning to influence the servo speed.
+And I set servo is range at 0 to 180 degree.
+Run the servo.
+This code to detect eye and draw the rectangular of the eye.
+When the camera detect the eye will make the led lighting, otherwise it won't.
+Second to run the code.
+Eight to release the resource.
+And now is the result and experiment.
+First I use my face to test it work well.
+Sencond I take off the glass to test. The result show that eyes classify more precise during take off glass.
+Third I turn off light make enviroment more darker. The result show that the more clarity enviroment will be more precise.
+Forth I use my ex.gf barbarra to testing. It works pretty well.
+Fith I use face image to test. The face image be more near maximizing expected utility than the enviroment.
+Potential reasearch opportunities? Have there better way to be more near maximizing expected utility?
+Contribution. Jetson nano can tracking what you want to set.
+The impact. Self-media, Security camera, film industry can use this tracking what they want with just jetson nano.
